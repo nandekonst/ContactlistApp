@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.get('/contactlist', function(req, res){
 	console.log("I received a GET request")
-	request('http://6538fa60-2163-11e5-a0d1-efbfe34b5ea3.app.jexia.com/contacts?jexia_token=345287d6e6692d068e5e0eab8b1fcf80', function (error, response, body) {
+	request('http://71183da0-4fe4-11e5-92dd-05d823229c00.test.jexia.com/contacts?jexia_token=fdb945bff12ae3770fcd4be7c3a90089', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			res.send(body) 
 		}
@@ -27,7 +27,7 @@ app.get('/contactlist', function(req, res){
 })
 app.post('/contactlist', function (req,res){
 	request.post(
-	"http://6538fa60-2163-11e5-a0d1-efbfe34b5ea3.app.jexia.com/contacts?jexia_token=345287d6e6692d068e5e0eab8b1fcf80" ,
+	"http://71183da0-4fe4-11e5-92dd-05d823229c00.test.jexia.com/contacts?jexia_token=fdb945bff12ae3770fcd4be7c3a90089" ,
 	{form: req.body},
 	function(err, httpResponse,body){
 		console.log(err);
@@ -46,7 +46,7 @@ app.delete('/contactlist/:id', function(req,res){
 //console.log(JSON.stringify(req.params));
 console.log('received delete '+ req.params.id );
 request.del(
-	"http://6538fa60-2163-11e5-a0d1-efbfe34b5ea3.app.jexia.com/contacts?jexia_token=345287d6e6692d068e5e0eab8b1fcf80" ,
+	"http://71183da0-4fe4-11e5-92dd-05d823229c00.test.jexia.com/contacts?jexia_token=fdb945bff12ae3770fcd4be7c3a90089" ,
 	{form: {id:req.params.id}},
 	function(err, httpResponse,body){
 		console.log(err);
@@ -63,7 +63,7 @@ request.del(
 });
 app.get('/contactlist/:id', function(req,res){
 	request(
-	'http://6538fa60-2163-11e5-a0d1-efbfe34b5ea3.app.jexia.com/contacts/'+req.params.id+'?jexia_token=345287d6e6692d068e5e0eab8b1fcf80', function (error, response, body) {
+	'http://71183da0-4fe4-11e5-92dd-05d823229c00.test.jexia.com/contacts/'+req.params.id+'?jexia_token=fdb945bff12ae3770fcd4be7c3a90089', function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			res.send(body) 
 		}
@@ -83,7 +83,7 @@ app.put('/contactlist/:id', function(req,res){
 	console.log("PUTTING " + id);
 	
 	request.put(
-	'http://6538fa60-2163-11e5-a0d1-efbfe34b5ea3.app.jexia.com/contacts/'+id+'?jexia_token=345287d6e6692d068e5e0eab8b1fcf80' ,
+	'http://71183da0-4fe4-11e5-92dd-05d823229c00.test.jexia.com/contacts/'+id+'?jexia_token=fdb945bff12ae3770fcd4be7c3a90089' ,
 	{form: req.body},
 	function(err, httpResponse,body){
 		console.log(err);
