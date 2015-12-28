@@ -17,10 +17,10 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
 	    }).success(function(response){
 			$scope.contactlist = response;
 			$scope.contact="";
-			console.log(response)
 			});
 
-		}
+		};
+
 		refresh();
   
 		//Add a contact
@@ -34,10 +34,9 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
 				
 				refresh();
 			
-			})
+			});
 		
-		
-		}
+		};
 		
 		//Delete Contact
 			$scope.removeContact = function(id){
@@ -47,7 +46,7 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
 			'Authorization': 'Bearer ' + token
 			}}).success(function(response){
 				refresh();
-				})
+				});
 			
 			};
 
@@ -58,7 +57,7 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
 			$http.get('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + id, {headers: {
 			'Authorization': 'Bearer ' + token
 			}}).success(function(response){
-			$scope.contact = response;
+				$scope.contact = response;
 			});
 		};
 		
@@ -68,24 +67,11 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
 			$http.put('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + $scope.contact.id, $scope.contact, {headers: {
 			'Authorization': 'Bearer ' + token
 			}}).success(function(response){
-			refresh();
-			})
-		
-		
-		
+				refresh();
+			});
+
 		};
-  
-  
-  
 
-  
-  }); 
-
-
-
+	}); 
 
 }]);
-
-
-
-
