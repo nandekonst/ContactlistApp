@@ -1,0 +1,13 @@
+{
+  "name": "jexia-contact-list-example",
+  "version": "0.0.1",
+  "licence": "MIT",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "mongojs": "^2.2.2",
+    "parser": "^0.1.4",
+    "protractor": "^3.0.0"
+  }
+}
