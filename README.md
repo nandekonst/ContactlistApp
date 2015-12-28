@@ -7,11 +7,11 @@ app is to demonstrate the basic functionality of Jexia. With this app you can:
 * Update contacts
 * Assign contacts to a department (a department has many persons, a person can be assigned to only one department)
 
-#Install
+## Install
 1. Clone the repository
 2. ```npm install```
 
-#Run Application
+## Run Application
 
 Run server.js from the root folder of the project
 
@@ -19,7 +19,7 @@ Run server.js from the root folder of the project
 or
 ```nodemon server.js```
 
-#Use the interface
+## Use the interface
 
 Check your localhost:
 ```http://localhost:3000/```
