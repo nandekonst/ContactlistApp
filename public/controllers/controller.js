@@ -25,12 +25,13 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
   
 		//Add a contact
 		$scope.addContact = function(){
-		
-			console.log($scope.contact);
 
-			$http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts', $scope.contact, {headers: {
-			'Authorization': 'Bearer ' + token
-			}}).success(function(response){
+			$http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts', 
+				$scope.contact, {
+					headers: {
+						'Authorization': 'Bearer ' + token
+					}
+				}).success(function(response){
 				
 				refresh();
 			
@@ -39,34 +40,39 @@ $http.post('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com', data).su
 		};
 		
 		//Delete Contact
-			$scope.removeContact = function(id){
-			
-				console.log(id);
-				$http.delete('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + id, {headers: {
-			'Authorization': 'Bearer ' + token
-			}}).success(function(response){
+		$scope.removeContact = function(id){
+		
+			$http.delete('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + id, {
+				headers: {
+					'Authorization': 'Bearer ' + token
+				}
+			}).success(function(response){
 				refresh();
-				});
-			
-			};
+			});
+		
+		};
 
 		//Edit Contact
 		$scope.editContact = function(id){
-			console.log(id);
 		
-			$http.get('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + id, {headers: {
-			'Authorization': 'Bearer ' + token
-			}}).success(function(response){
+			$http.get('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + id, {
+				headers: {
+					'Authorization': 'Bearer ' + token
+				}
+			}).success(function(response){
 				$scope.contact = response;
 			});
+
 		};
 		
-
 		//Update Contact
 		$scope.updateContact = function(){
-			$http.put('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + $scope.contact.id, $scope.contact, {headers: {
-			'Authorization': 'Bearer ' + token
-			}}).success(function(response){
+			$http.put('http://82e90450-9a6d-11e5-bfa1-3b5373a1e28c.app.jexia.com/contacts/' + 
+				$scope.contact.id, $scope.contact, {
+					headers: {
+						'Authorization': 'Bearer ' + token
+					}
+				}).success(function(response){
 				refresh();
 			});
 
