@@ -8,6 +8,7 @@
     "express": "^4.13.3",
     "mongojs": "^2.2.2",
     "parser": "^0.1.4",
-    "protractor": "^3.0.0"
+    "protractor": "^3.0.0",
+    "request": "^2.67.0"
   }
 }
